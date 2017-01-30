@@ -1,4 +1,4 @@
-# demo
+# data
 
 This repo has data for various GES 778 demos. 
 
