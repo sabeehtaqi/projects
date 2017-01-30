@@ -1,5 +1,5 @@
 # demo
 
-This repo has data used in the various GES 778 demos. 
+This repo has data for various GES 778 demos. 
 
-Files are served directly from the master branch.
+Files on the master branch are served from <http://umbcsg/data>.
