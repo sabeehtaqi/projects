@@ -1,0 +1,4 @@
+#!/bin/bash
+
+shp2json -n Final_Project/BENIN.shp > benin.json
+shp2json -n Final_Project/Villages.shp > villages.json
