@@ -7,10 +7,10 @@
 
 ### Topojson data
 
-Topojson conversion of the two data sources above (Census & Natural Earth)
+Topojson versions of the two geographic data sources above
 
-* [US Atlas](https://github.com/topojson/us-atlas)
-* [World Atlas](https://github.com/topojson/world-atlas)
+* [US Atlas -- Census](https://github.com/topojson/us-atlas)
+* [World Atlas -- Natural Earth](https://github.com/topojson/world-atlas)
 
 ### Additional data sources
 
