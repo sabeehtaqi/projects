@@ -4,6 +4,7 @@
 
 * [Census Bureau's Cartographic Boundary Shapefiles](https://www.census.gov/geo/maps-data/data/tiger-cart-boundary.html)
 * [Natural Earth's World-wide vector data](http://www.naturalearthdata.com/downloads/)
+* [Mapzen data and/or vector tiles](https://mapzen.com/)
 
 ### Topojson data
 
