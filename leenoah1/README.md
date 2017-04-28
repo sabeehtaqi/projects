@@ -4,20 +4,20 @@
 
 Repo: https://github.com/leenoah1/class_project
 
-* Converted census.gov shapefile to GeoJSON using an online tool. 
-* Clipped to watershed with GIS tools
-
 ## To Do
 
 These are next steps for the project.
 
 #### Documentation
 
-Add content to the README.md in your repo.
+Add the following content to the README.md in your repo.
 
-1. Add 1 or 2 sentences describing project goals
-2. Provide attribution and links to all data sources (including watershed)
-3. Describe all pre-processing of the data
+1. 1 or 2 sentences describing overall project goals
+2. Attribution and links to all data sources (including watershed)
+3. Extremely brief description of all pre-processing, for example:
+
+        * Converted census.gov shapefile to GeoJSON using an online tool. 
+        * Clipped to watershed with GIS tools
 
 #### Technical
 
