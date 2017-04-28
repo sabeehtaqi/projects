@@ -15,9 +15,8 @@ Add the following content to the README.md in your repo.
 1. 1 or 2 sentences describing overall project goals
 2. Attribution and links to all data sources (including watershed)
 3. Extremely brief description of all pre-processing, for example:
-
-        * Converted census.gov shapefile to GeoJSON using an online tool. 
-        * Clipped to watershed with GIS tools
+    * Converted census.gov shapefile to GeoJSON using an online tool. 
+    * Clipped to watershed with GIS tools
 
 #### Technical
 
