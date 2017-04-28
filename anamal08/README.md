@@ -1,6 +1,6 @@
 ## Bicycling in DC
 
-Show the location of Capital Bakeshare stations and bake trails in Washington DC
+Show the location of Capital Bakeshare stations and bike trails in Washington DC
 
 ### Data
 
