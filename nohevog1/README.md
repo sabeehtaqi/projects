@@ -29,15 +29,7 @@ Add the following content to the README.md in your repo.
 
 For each steps, create a separate gist/block -- link to these in your repo's README.md
 
-1. Plot GeoJSON for any data in the umbcvis repository -- put it in a gist and link to it from your repo's README.md
+1. Plot GeoJSON for any data in this repository -- put it in a gist and link to it from your repo's README.md
 2. Add some type of basemap (possibly a slippy map) -- TBD
 3. Add interaction other data sources (e.g., images) -- TBD
 
-
-
-
-Data source: https://github.com/nohevog1/Final_Project
-
-Step 0: nohevog1 will draw the existing GeoJSON on an SVG
-Step 1: PB will convert to GeoJSON
-Step 2: nohevog1 will draw these features on a map

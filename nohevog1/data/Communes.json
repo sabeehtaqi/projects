@@ -1,0 +1,5 @@
+{"type":"Feature","properties":{"RECNUM":"2","NAME":"Banikoara","LAT":"+11.3002282","LON":"+2.4407902","ALTITUDE":"314.0","LONGNAME":"06-AUG-10 2:09:56"},"geometry":{"type":"Point","coordinates":[2.4407901695075727,11.300228213478745]}}
+{"type":"Feature","properties":{"RECNUM":"7","NAME":"Dassa","LAT":"+7.7792820","LON":"+2.1832533","ALTITUDE":"164.0","LONGNAME":"05-AUG-10 4:07:06"},"geometry":{"type":"Point","coordinates":[2.1832532610326734,7.779282047938996]}}
+{"type":"Feature","properties":{"RECNUM":"15","NAME":"Glazoue","LAT":"+7.9724463","LON":"+2.2404707","ALTITUDE":"193.8","LONGNAME":"05-AUG-10 4:25:29"},"geometry":{"type":"Point","coordinates":[2.2404707304412006,7.972446275366782]}}
+{"type":"Feature","properties":{"RECNUM":"26","NAME":"Malanville","LAT":"+11.8438574","LON":"+3.3929871","ALTITUDE":"166.2","LONGNAME":"06-AUG-10 5:36:25"},"geometry":{"type":"Point","coordinates":[3.392987109781629,11.84385741431915]}}
+{"type":"Feature","properties":{"RECNUM":null,"NAME":"Ganvie","LAT":"+6.4700","LON":"+2.4122","ALTITUDE":null,"LONGNAME":null},"geometry":{"type":"Point","coordinates":[-1.7976931348623157e+308,-1.7976931348623157e+308]}}

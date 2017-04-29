@@ -1,4 +1,18 @@
 #!/bin/bash
 
-shp2json -n Final_Project/BENIN.shp > benin.json
-shp2json -n Final_Project/Villages.shp > villages.json
+echo
+
+git clone git@github.com:nohevog1/Final_Project.git
+for shapefile in Final_Project/*.shp
+do
+  base=$(basename $shapefile)
+  newfile="$(echo $base | cut -f 1 -d '.').json"
+  shp2json -n $shapefile > data/$newfile
+  echo "finished creating $newfile"
+done
+rm -rf Final_Project
+rm -rf node_modules
+
+echo;
+exit 0
+
