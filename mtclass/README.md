@@ -1,6 +1,6 @@
 ## Maryland county
 
-One-sentence project description goes here -- county-level 
+Interactive chloropleth map based on data from census.gov
 
 ### Data
 
@@ -24,6 +24,7 @@ Add the following content to the README.md in your repo.
 For each step, create a separate gist/block -- link to these in your repo's README.md
 
 1. Plot of MD based on us-atlas (or some other example in class)
+    * http://blockbuilder.org/MTClass/237b48e16999f07a69fa01f880fb02bf (latest as of 2 May)
 2. Stacked bar chart of ACS data (starting with mbostock's stacked bar chart block)
 3. Hover over county to create tooltips
 
