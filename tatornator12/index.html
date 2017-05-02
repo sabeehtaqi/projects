@@ -284,7 +284,7 @@ function createDot(feature) {
   var landingSitesMaterial = new THREE.PointsMaterial({ size: 1.5, color: 0xff0000, map: THREE.ImageUtils.loadTexture("https://raw.githubusercontent.com/mrdoob/three.js/master/examples/textures/sprites/disc.png"), transparent: true });
  var dot = new THREE.Points(landingSitesGeometry, landingSitesMaterial);
   dot.name = feature.properties.NAME + "<br>" + feature.properties.COUNTRY + "<br>" + feature.properties.YEAR
-           + "<br><a href=\'" + feature.properties.WEB_LINK + "\'>feature.properties.WEB_LINK</a>";
+           + "<br><a href=\'" + feature.properties.WEB_LINK + "'>" + feature.properties.WEB_LINK + "</a>";
   dot.position.set(position.x, position.y, position.z);
   dot.geometry.boundingSphere = new THREE.Sphere();
   dot.geometry.boundingSphere.center.x = position.x;
@@ -347,6 +347,7 @@ function createDot(feature) {
     INTERSECTED = null;
     
         div.transition()
+           .delay(1000)
            .duration(400)
            .style("opacity", 0);
     
