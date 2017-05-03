@@ -1,6 +1,6 @@
-## Project title
+## Population-chloropleth time series
 
-Project description (1 sentence) goes here
+Goal: A Chloropeth map of population estimates for the counties in USA from the year 2010 to 2016. and try to make it interactive by a scroll bar or something similar.
 
 ### Data
 
@@ -12,12 +12,9 @@ Next steps for the project....
 
 #### Documentation
 
-Add the following content to the README.md in your repo.
+##### Add links to all data sources
 
-1. 1 or 2 sentences describing overall project goals, e.g., interactive tool?, hypothesis test? (0% complete)
-2. Attribution and links to all data sources (0% complete)
-    * describe parameters used in census.gov API query
-3. Extremely brief description of all pre-processing (0% complete)
+Data were downloaded in excel format. Several columns were not useful so the data were refined and converted to CSV
 
 #### Technical
 
@@ -31,4 +28,3 @@ For each steps, create a separate gist/block -- link to these in your repo's REA
     * Identify in detail what is going on with d3.map in the example
     * Create a simple example (start by using something that can be manipulated in console)
 3. Add interaction somehow (TBD)
-
