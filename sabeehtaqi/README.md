@@ -1,24 +1,27 @@
 ## Project title
 
-Project description (1 sentence) goes here
+Chloropeth Map of Population estimate for Counties in USA
 
 ### Data
 
-Project repository: ??
+https://github.com/sabeehtaqi/FINAL-PROJECT
 
 ## To Do
 
-Next steps for the project....
+Merge the data in CSV format with the counties
 
 #### Documentation
 
 Add the following content to the README.md in your repo.
 
 1. 1 or 2 sentences describing overall project goals, e.g., interactive tool?, hypothesis test? (0% complete)
+My Project Goal is to make a Chloropeth map of Population estimates for the counties in USA from the year 2010 to 2016 and try to make it interactive by a scroll bar or something similar.
 2. Attribution and links to all data sources (0% complete)
-    * describe parameters used in census.gov API query
-3. Extremely brief description of all pre-processing (0% complete)
+ Census Data 2010
+ Population Estimates County data All States
 
+3. Extremely brief description of all pre-processing (0% complete)
+Data was in excel format with a number of columns that were not useful so I refined the data and convert it to CSV
 #### Technical
 
 For each steps, create a separate gist/block -- link to these in your repo's README.md
