@@ -2,25 +2,20 @@
 
 Chloropleth Map of New York showing the Population under age  5 in all New York counties for years 2010-2015.
 
-### Data
+### Project repository
 
-This is the link to my data repository used for this map.
-https://github.com/qaisarmehmood/umbcvis/blob/master/Newyork.population%20Data.csv
+* https://github.com/qaisarmehmood/umbcvis
+
+* Data: https://github.com/qaisarmehmood/umbcvis/blob/master/Newyork.population%20Data.csv
 
 ## To Do
-
-1. Add a map showing all the US states and Counties.
-2. Filter only the New York counties from the map.
 
 #### Documentation
 
 Add the following content to the README.md in your repo.
 
-1. 1 or 2 sentences describing overall project goals, e.g., interactive tool?, hypothesis test? (0% complete)
-2. Attribution and links to all data sources (0% complete)
-    * describe parameters used in census.gov API query
-3. Extremely brief description of all pre-processing (0% complete)
-    * Got census data (by hand) and put it in CSV file in the repo
+1. Attribution and links to all data sources
+2. Extremely brief description of all pre-processing
 
 #### Technical
 
