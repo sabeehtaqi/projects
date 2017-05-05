@@ -1,7 +1,7 @@
 
 ## Benin agriculture
 
-#### Goal
+### Goal
 
 Interactive map showing genetic diversity of rice varieties in two ecogeographic regions in BENIN, West Africa, 
 and relationship to:
@@ -9,7 +9,7 @@ and relationship to:
 * environmental variables such as rainall, elevation, temperature, etc.
 It will also display some touristic characteristics of the country and some points of interests.
 
-*Objectives:*
+##### Objectives
 
 1. Display the different shapefiles
 2. Overlay them 
