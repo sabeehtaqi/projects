@@ -6,7 +6,8 @@ The Goal is to identify the counties with the greatest population.
 The chart will show how the population is distributed by age cohorts, which
 will tell the story as to what age cohorts are concentrated in specific Counties, e.g., PG County has the largest population ages 20-24, perhaps because of UMD, and Montgomery County seems to attract retirees.
 
-Next steps for the project....
+Specific objectives:
+
 1) Draw a circle for Rockville using using the Lat Long
 2) Create a drag function for the circle
 3) Drag the circle on top of the State, and as the circle moves, it will label the Counties that it is moving over like in Class 13 the States were labelled.
