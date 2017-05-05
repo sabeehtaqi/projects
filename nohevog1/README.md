@@ -30,7 +30,7 @@ https://github.com/nohevog1/Final_Project
 
 2. https://gist.github.com/nohevog1/56f18c2095fcd145b384cf01147042f7
 
-    * This is the slippy map [demo from Class 10](https://umbcvis.github.io/classes/class-10/).
+    * This is a modified version of the slippy map [demo from Class 10](https://umbcvis.github.io/classes/class-10/).
 
 ## To Do
 
