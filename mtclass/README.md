@@ -21,6 +21,9 @@ Data are from census.gov, both the decennial census and American Fact Finder.
 
 ### Instructional demo
 
+Using the [Class-23 demo](https://umbcvis.github.io/classes/class-12) as a starting point,
+this demo shows how to reconstruct all the counties from the census tracts. 
+
 https://umbcvis.github.io/projects/mtclass
 
 ## To Do
