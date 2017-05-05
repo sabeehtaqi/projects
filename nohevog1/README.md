@@ -32,20 +32,23 @@ https://github.com/nohevog1/Final_Project
 
     * This is a modified version of the slippy map [demo from Class 10](https://umbcvis.github.io/classes/class-10/).
 
-### Instructional demos
+### Instructional demo
 
-1. https://umbcvis.github.io/projects/nohevog1
+https://umbcvis.github.io/projects/nohevog1
 
 ## To Do
 
 These are next steps for your project.
 
-#### Data Preparation
+#### Data Preparation -- IMPORTANT
 
-The source shapefiles need to be "unprojected"
+You need to fix some of your shapefiles.  
 
-* Africa.shp is "unprojected", meaning locations are stored as Latitude & Longitude
-* Other shapefiles use WGS_1984_UTM_Zone_31N
+The instructional demo (above) shows GeoJSON created from Africa.shp.  Africa.shp is "unprojected", meaning locations are stored as Latitude & Longitude. The same is true for Alibori_Villages_surveys.shp, which also works well.
+
+However, other shapefiles in your repo use WGS_1984_UTM_Zone_31N -- these will not work without additional work.
+
+**You need to make sure all your shapefiles are "unprojected", as is the case for Africa.shp and Albori_Villages.shp**
 
 #### Technical
 
