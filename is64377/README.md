@@ -18,16 +18,15 @@ It prints the JavaScript object in the browser window.
 
 ## To Do
 
-Next steps for the project....
+These are next steps for your project....
 
 #### Technical
 
-For each step, create a separate gist/block -- link to these in your repo's README.md
+* Replace earthquakes with OSHA data (in CSV with Lat Lon) -- starting from Class #5 demo
+* Create a gist with your result and add that link to your project repo's README.md
 
-1. Replace earthquakes with OSHA data (in CSV with Lat Lon) -- starting from Class #5 demo
+When you're done this step, continue with the rest of your project.
 
 #### Documentation
 
-Add the following content to the README.md in your repo.
-
-1. Add links to all data sources
+* Add links to your original data sources to the README.md in your repo.
