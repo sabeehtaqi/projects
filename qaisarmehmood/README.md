@@ -1,14 +1,16 @@
 ## New York demographics
 
-[One-sentence project description goes here]
+Chloropleth Map of New York showing the Population under age  5 in all New York counties for years 2010-2015.
 
 ### Data
 
-Project repository: ???
+This is the link to my data repository used for this map.
+https://github.com/qaisarmehmood/umbcvis/blob/master/Newyork.population%20Data.csv
 
 ## To Do
 
-These are next steps for the project.
+1. Add a map showing all the US states and Counties.
+2. Filter only the New York counties from the map.
 
 #### Documentation
 
@@ -27,4 +29,5 @@ For each steps, create a separate gist/block -- link to these in your repo's REA
 1. Create plot of NY Counties based on us-atlas (if starting from one of Mike Bostock's blocks, provide a link)
 2. Integrate data from census.gov to create chloropleth map using FIPS
 3. Add interactive capability
+
 
