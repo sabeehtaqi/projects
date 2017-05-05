@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+path {
+  fill: #555555;
+  stroke: #aaaaaa;
+}
+body {
+  position: absolute;
+  margin: 0px;
+  font: 16px sans-serif;
+}
+.info {
+  color: #000;
+  position: absolute;
+  top: 450px;
+  left: 800px;
+}
+.tooltip {
+  position: absolute;
+  visibility: visible;
+  background-color: #aaa;
+  padding: 5px;
+}
+/* This style is used when dragging the dot */
+.active {
+  stroke: #000;
+  stroke-width: 2px;
+}
+path {
+  fill: #555555;
+  stroke: #aaaaaa;
+}
+
+svg {
+  background-color: #4682b4;
+}
+
+</style>
+
+<body>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src ="https://d3js.org/topojson.v2.min.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script>
+var width = 960, height = 500;
+
+var data;  // declare a global variable
+
+var svg = d3.select('body').append('svg')
+    .attr('width', width)
+    .attr('height', height)
+var threshold = d3.scaleThreshold()
+    .domain([1, 10, 20, 200, 800, 2000, 5000, 10000])
+    .range(d3.schemeOrRd[9]);
+
+d3.queue()
+    .defer(d3.json, 'https://umbcvis.github.io/classes/class-12/tracts.json')
+    .defer(d3.json, 'https://umbcvis.github.io/classes/class-12/population.json')
+    .await(ready);
+
+// Note: scale and translate will be determined by the data
+var projection = d3.geoConicConformal()
+    .parallels([38 + 18 / 60, 39 + 27 / 60])
+    .rotate([77, -37 -40 / 60]);
+
+var path = d3.geoPath()
+    .projection(projection);
+function ready(error, json, population) {
+    if (error) throw error;
+
+ // Convert topojson to GeoJSON
+    geojson = topojson.feature(json, json.objects.tracts);
+    tracts = geojson.features;
+
+ // Set the projection's scale and translate based on the GeoJSON
+    projection.fitSize([960, 500], geojson);
+
+  // Extract an array of features (one tract for each feature)
+    tracts.forEach(function(tract) {
+        var countyfips = tract.properties.COUNTYFP;
+        var tractce = tract.properties.TRACTCE;
+        pop =  population.filter(function(d) { return (d[2] === countyfips)
+                                                   && (d[3] === tractce); });
+        pop = +pop[0][0];
+        var aland = tract.properties.ALAND / 2589975.2356;
+
+//area in square miles
+        tract.properties.density = pop / aland;
+    });
+    svg.selectAll('path.tract')
+        .data(tracts)
+      .enter()
+        .append('path')
+        .attr('class', 'tract')
+        .attr('d', path)
+        .style('fill', function (d) {return threshold(d.properties.density); })
+        .style('stroke', '#000')
+
+    // Draw all counties in MD
+    fips = geojson.features.map(function(d) { return d.properties.COUNTYFP; });
+    uniqueFips = d3.set(fips).values();
+    counties = uniqueFips.map(function(fips) {
+      return json.objects.tracts.geometries
+          .filter(function(d) { return d.properties.COUNTYFP === fips; });
+    });
+    // Construct county boundary from tracts, and add state & county FIPS
+    counties = counties.map(function(countyTracts) {
+      var county = topojson.merge(json, countyTracts);
+      county.statefp = countyTracts[0].properties.STATEFP;
+      county.countyfp = countyTracts[0].properties.COUNTYFP;
+      return county;
+    })
+    svg.selectAll("path.county")
+        .data(counties)
+      .enter()
+        .append('path')
+        .attr('class', 'county')
+        .attr('d', path)
+        .style('stroke', 'white')
+        .style('stroke-width', '2px')
+        .style('fill', 'none');
+
+    // 1. NEW: Define an array with Rockville MD longitude & latitude
+    var Rockville = [-77.1528, 39.0840];
+    // 2. NEW: Add an HTML <div> element that will function as the tooltip
+    var tooltip = d3.select('body').append('div')
+        .attr('class', 'tooltip')
+        .text('Hello, world!')
+    // 3. NEW: Add a draggable circle to the map
+  // See: https://bl.ocks.org/mbostock/22994cc97fefaeede0d861e6815a847e)
+    var layer2 = svg.append("g");
+  layer2.append("circle")
+      .attr("class", "Rockville")
+      .attr("cx", projection(Rockville)[0])
+      .attr("cy", projection(Rockville)[1])
+      .attr("r", 10)
+      .style("fill", "yellow")  // Make the dot yellow
+
+      .call(d3.drag()           // Add the drag behavior
+        .on("start", dragstarted)
+        .on("drag", dragged)
+        .on("end", dragended));
+
+  function dragstarted(d) {
+    // Highlight the circle that's being dragged
+  d3.select(this).raise().classed("active", true);
+    // Make the tooltip visible during drag events
+  tooltip.style("visibility", "visible");
+  }
+function dragged(d) {
+  // Reposition the circle to follow the mouse during drag
+  d3.select(this).attr("cx", d3.event.x).attr("cy", d3.event.y);
+ // Reposition the tooltip too
+  tooltip.style("left", (d3.event.x - 30) + "px").style("top", (d3.event.y - 50) + "px");
+
+  // Add the name of the County to the tooltip
+  d3.selectAll('path.county')
+      .filter(function(d) { return d3.geoContains(d, projection.invert([d3.event.x, d3.event.y])) })
+      .each(function(d) {
+        console.log('here it is', d);
+        tooltip.html(d.statefp + d.countyfp);
+      })
+}
+function dragended(d) {
+  // Eliminate the highlight when dragging ends
+  d3.select(this).classed("active", false);
+  // Hide the tooltip
+  tooltip.style("visibility", "hidden");
+}
+}
+ //Add legend
+
+    addLegend();
+function addLegend() {
+  var formatNumber = d3.format("d");
+  var x = d3.scalePow().exponent('.15')
+      .domain([1, 80000])
+      .range([0, 300]);
+  var xAxis = d3.axisBottom(x)
+      .tickSize(13)
+      .tickValues(threshold.domain())
+      .tickFormat(formatNumber)
+  var g = svg.append("g")
+      .attr('transform', 'translate(100, 200)')
+      .call(xAxis);
+  g.select(".domain")
+      .remove();
+  g.selectAll("rect")
+    .data(threshold.range().map(function(color) {
+      var d = threshold.invertExtent(color);
+      if (d[0] == null) d[0] = x.domain()[0];
+      if (d[1] == null) d[1] = x.domain()[1];
+      return d;
+    }))
+    .enter().insert("rect", ".tick")
+      .attr("height", 8)
+      .attr("x", function(d) { return x(d[0]); })
+      .attr("width", function(d) { return x(d[1]) - x(d[0]); })
+      .attr("fill", function(d) { return threshold(d[0]); });
+  g.append("text")
+      .attr("fill", "#000")
+      .attr("font-weight", "bold")
+      .attr("text-anchor", "start")
+      .attr("y", -6)
+      .text("Population per square mile");
+}
+</script>
