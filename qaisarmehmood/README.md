@@ -14,7 +14,7 @@ This demo shows how to read CSV data for the project into a map of counties for 
 
 *  https://umbcvis.github.io/projects/qaisarmehmood
 
-The second demo shows how to filter all the counties except those in New York.  And it uses the [SVG transform attriburte](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform) to zoom in on the state.
+The second demo shows how to filter all the counties except those in New York.  And it uses the [SVG transform attribute](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform) to zoom in on the state.
 
 *  https://umbcvis.github.io/projects/qaisarmehmood/index2
 
