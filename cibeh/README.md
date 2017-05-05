@@ -14,7 +14,7 @@ Data has been summarized and filtered to match the specification of this present
 
 This demo shows how to read CSV data for the project into a map of counties for the entire US.
 
-*  https://umbcvis.github.io/projects/sabeehtaqi/
+*  https://umbcvis.github.io/projects/cibeh/
 
 ## To Do
 
