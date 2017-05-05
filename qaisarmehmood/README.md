@@ -8,7 +8,7 @@ Chloropleth Map of New York showing the Population under age  5 in all New York 
 
 * Data: https://github.com/qaisarmehmood/umbcvis/blob/master/Newyork.population%20Data.csv
 
-### Instuctional demos
+### Instructional demos
 
 This demo shows how to read CSV data for the project into a map of counties for the entire US.
 
