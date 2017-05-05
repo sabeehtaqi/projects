@@ -4,7 +4,7 @@ Chloropeth Map of Population estimate for Counties in USA
 
 ### Data
 
-https://github.com/sabeehtaqi/FINAL-PROJECT
+https://github.com/sabeehtaqi/FINAL-PROJECT/blob/master/Project%20Data.csv
 
 ## To Do
 
