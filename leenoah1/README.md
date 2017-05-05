@@ -20,7 +20,7 @@ Project repository: https://github.com/leenoah1/class_project
 
 ## To Do
 
-For each steps, create a separate gist/block -- link to these in your repo's README.md
+For each step, create a separate gist/block -- link to these in your repo's README.md
 
 1. Plot GeoJSON -- put it in a gist and link to it from your repo's README.md
 2. Plot GeoJSON on top of the slippy map (zoomable map tiles) from the Class 12 demo
