@@ -1,10 +1,20 @@
 ## Project
 
-One-sentence project description goes here
+The purpose of this map is to create a pollution index report for all states within the United States. More precisely, the average daily emission of pollutant carbon monoxide (CO) is mapped in this presentation.
 
 ### Data
 
-Project repository: ???
+Project repository: https://github.com/umbcvis/projects/tree/master/cibeh
+
+Data derived from: https://www.epa.gov/outdoor-air-quality-data/download-daily-data
+
+Data has been summarized and filtered to match the specification of this presentation.
+
+### Instructional demo
+
+This demo shows how to read CSV data for the project into a map of counties for the entire US.
+
+*  https://umbcvis.github.io/projects/sabeehtaqi/
 
 ## To Do
 
