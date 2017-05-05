@@ -22,7 +22,7 @@ These are next steps for your project....
 
 #### Technical
 
-* Replace earthquakes with OSHA data (in CSV with Lat Lon) -- starting from Class #5 demo
+* Replace earthquakes with OSHA data (from your CSV) -- start from the Class #5 demo
 * Create a gist with your result and add that link to your project repo's README.md
 
 When you're done this step, continue with the rest of your project.
