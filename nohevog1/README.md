@@ -40,7 +40,7 @@ https://umbcvis.github.io/projects/nohevog1
 
 These are next steps for your project.
 
-#### Data Preparation -- IMPORTANT
+### Data Preparation -- IMPORTANT
 
 You need to fix some of your shapefiles.  
 
@@ -50,9 +50,9 @@ However, other shapefiles in your repo use WGS_1984_UTM_Zone_31N -- these need a
 
 **You need to make sure all your shapefiles are "unprojected", as you've done for Africa.shp and Albori_Villages.shp**
 
-#### Technical
+### Technical
 
-1. Slippy map initialized on Benin for your gist #2
+Modify your Gist #2 slippy map so that it starts zoomed in on Benin.
 
     * Change the initial center (line 87) and zoom level (line 96) to center the slippy map on Benin
 
