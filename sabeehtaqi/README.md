@@ -8,9 +8,9 @@ Project repository: https://github.com/sabeehtaqi/FINAL-PROJECT
 
 ### Instuctional demo
 
-* This demo shows how to read CSV data for the project into a map of counties for the entire US.
+This demo shows how to read CSV data for the project into a map of counties for the entire US.
 
-https://umbcvis.github.io/projects/sabeehtaqi/
+*  https://umbcvis.github.io/projects/sabeehtaqi/
 
 ## To Do
 
