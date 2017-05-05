@@ -11,13 +11,6 @@ It will also display some touristic characteristics of the country and some poin
 
 #### Implementation 
 
-1. Display the different shapefiles
-2. Overlay them 
-3. Figure out the type of interactions among shapefiles
-4. Would like to create an UII to display or not the different elements chosen from a drop-down list
-5. Click on a Department or State, and have the different pictures showing and close
-6. Make one or 2 graphs
-
 ### Project repository
 
 https://github.com/nohevog1/Final_Project
@@ -44,9 +37,11 @@ Add the following content to the README.md in your project repo.
 
 #### Technical
 
-For each steps, create a separate gist/block -- link to these in your repo's README.md
+For each step, create a separate gist, add a link for each one.
 
-1. Plot GeoJSON for any data in this repository -- put it in a gist and link to it from your repo's README.md
-2. Add some type of basemap (possibly a slippy map) -- TBD
-3. Add interaction other data sources (e.g., images) -- TBD
-
+1. Display the different shapefiles
+2. Overlay them 
+3. Figure out the type of interactions among shapefiles
+4. Would like to create an UII to display or not the different elements chosen from a drop-down list
+5. Click on a Department or State, and have the different pictures showing and close
+6. Make one or 2 graphs
