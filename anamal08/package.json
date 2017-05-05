@@ -1,0 +1,24 @@
+{
+  "name": "anamal08",
+  "version": "0.0.1",
+  "description": "Shapefile conversion for final project -- Spring 2017.",
+  "license": "BSD-3-Clause",
+  "keywords": [
+    "topojson",
+    "geojson",
+    "shapefile"
+  ],
+  "scripts": {
+    "prepublish": "bash prepublish",
+    "postpublish": ""
+  },
+  "devDependencies": {
+    "d3-dsv": "^1.0.3",
+    "d3-geo-projection": "^2.0.0",
+    "ndjson-cli": "^0.3.0",
+    "shapefile": "^0.6.1",
+    "topojson-server": "^3.0.0",
+    "topojson-client": "^3.0.0",
+    "topojson-simplify": "^3.0.0"
+  }
+}

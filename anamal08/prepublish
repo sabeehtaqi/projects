@@ -1,0 +1,20 @@
+#!/bin/bash
+
+echo
+
+mkdir data
+#git clone git@github.com:AnaMal08/classes.git
+for shapefile in classes/finalproject/*.shp
+do
+  base=$(basename $shapefile)
+  newfile="$(echo $base | cut -f 1 -d '.').json"
+#  shp2json -n $shapefile > data/$newfile
+   ogr2ogr -f geojson data/$newfile $shapefile
+  echo "finished creating $newfile"
+done
+#rm -rf classes
+#rm -rf node_modules
+
+echo;
+exit 0
+

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<script src="//d3js.org/d3.v4.min.js"></script>
+<script>
+
+d3.json('data/Bike_Trails_Project.json', function(err, json) {
+    if (err) throw err;
+
+    // Log the data to the console
+    console.log(json);
+
+   // Print the data object in the browser window
+   d3.select('body').append('pre')
+       .html(JSON.stringify(json, null, 2));
+});
+
+</script>
