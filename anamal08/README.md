@@ -8,6 +8,12 @@ Project repository: https://github.com/AnaMal08/classes/tree/master/finalproject
 
 Demo: http://bl.ocks.org/AnaMal08/c1266b871dc76a71972ddd3753d7db1e
 
+## Instructional demo
+
+This demo shows how to read the GeoJSON constructed from the shapefiles in the project repository
+
+* https://umbcvis.github.io/projects/anamal08/
+
 ## To Do
 
 This project is well underway.
