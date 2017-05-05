@@ -33,3 +33,9 @@ For each steps, create a separate gist/block -- link to these in your repo's REA
 2. Add some type of basemap (possibly a slippy map) -- TBD
 3. Add interaction other data sources (e.g., images) -- TBD
 
+#### Gist
+Version 1
+url: https://gist.github.com/nohevog1/65e448364a9057a6b01a6be6405efb76
+
+Version 2
+url: https://gist.github.com/nohevog1/56f18c2095fcd145b384cf01147042f7
