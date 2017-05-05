@@ -13,8 +13,17 @@ var svg = d3.select("svg");
 
 var path = d3.geoPath();
 
-d3.json("https://unpkg.com/us-atlas@1/us/10m.json", function(error, us) {
+var filename = "https://raw.githubusercontent.com/sabeehtaqi/FINAL-PROJECT/master/PopulationEstimatesProject%20Final.csv";
+
+d3.queue()
+    .defer(d3.json,"https://unpkg.com/us-atlas@1/us/10m.json")
+    .defer(d3.csv, filename)
+    .await(ready);
+
+function ready(error, us, csv) {
   if (error) throw error;
+
+  console.log('here is the csv data:', csv);
 
   var counties = topojson.feature(us, us.objects.counties).features;
 
@@ -36,6 +45,6 @@ d3.json("https://unpkg.com/us-atlas@1/us/10m.json", function(error, us) {
 
   svg.append("path")
       .attr("d", path(topojson.feature(us, us.objects.nation)));
-});
+}
 
 </script>
