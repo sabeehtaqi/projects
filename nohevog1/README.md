@@ -32,9 +32,26 @@ https://github.com/nohevog1/Final_Project
 
     * This is a modified version of the slippy map [demo from Class 10](https://umbcvis.github.io/classes/class-10/).
 
+### Instructional demos
+
+1. https://umbcvis.github.io/projects/nohevog1
+
 ## To Do
 
 These are next steps for your project.
+
+#### Data Preparation
+
+The source shapefiles need to be "unprojected"
+
+* Africa.shp is "unprojected", meaning locations are stored as Latitude & Longitude
+* Other shapefiles use WGS_1984_UTM_Zone_31N
+
+#### Technical
+
+1. Slippy map initialized on Benin for your gist #2
+
+    * Change the initial center (line 87) and zoom level (line 96) to center the slippy map on Benin
 
 #### Documentation
 
@@ -45,11 +62,4 @@ Add the following content to the README.md in your project repo.
 * Extremely brief description of all pre-processing
     * *Did you create your shapefiles for your other class/program?  If so, what tools did you use?*
     * Shapefiles converted to GeoJSON by instructor: https://github.com/umbcvis/projects/tree/master/nohevog1
-
-#### Technical
-
-1. Slippy map initialized on Benin
-
-    * Change the initial center (line 87) and zoom level (line 96) to center the slippy map on Benin
-
 

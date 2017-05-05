@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<title>Class 10</title>
+<title>Test</title>
 <style>
 
 body {
@@ -63,15 +63,31 @@ var vector = svg.append("path");
 
 var quakes = svg.append("g");
 
+var benin = svg.append("g");
+
 var us = "https://umbcvis.github.io/classes/class-03/us.json";
 var usgs = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson";
+var endpoint = "https://raw.githubusercontent.com/umbcvis/projects/master/nohevog1/data/";
+
+// The following files work
+var file = "Africa.json";  // This works (Lat/Lon)
+//var file = "Alibori_Villages_surveys.json" // This works (Lat/Lon)
+
+// The following files do NOT work
+// They have been projected onto  (UTM Transverse Mercator = WGS_1984_UTM_Zone_31N)
+//var file = "Benin.json";  // This does not work
+//var file = "Parcs_Nationaux.json"; // Ditto
+
+// Local testing
+// endpoint = "http://localhost/~pbogden/umbcvis/projects/nohevog1/data/";
 
 d3.queue()
     .defer(d3.json, us)
     .defer(d3.json, usgs)
+    .defer(d3.json, endpoint + file)
     .await(ready);
 
-function ready(error, us, usgs) {
+function ready(error, us, usgs, json) {
   if (error) throw error;
 
   vector
@@ -84,7 +100,8 @@ function ready(error, us, usgs) {
       .style("fill", 'crimson')
 
   // Compute the projected initial center.
-  var center = projection([-98.5, 39.5]);
+//  var center = projection([-98.5, 39.5]);
+  var center = projection([ 2.3158, 9.3077]);
 
   // Apply a zoom transform equivalent to projection.{scale,translate,center}.
   svg
@@ -95,6 +112,14 @@ function ready(error, us, usgs) {
           .translate(width / 2, height / 2)
           .scale(1 << 12)
           .translate(-center[0], -center[1]));
+
+  benin.append('path')
+      .datum(json)
+      .attr("class", "country")
+      .attr("d", path)
+      .style('stroke', 'yellow')
+      .style('fill', 'white')
+  console.log(d3.selectAll('path.country').node())
 }
 
 function zoomed() {
@@ -148,4 +173,3 @@ function formatLocation(p, k) {
 }
 
 </script>
-

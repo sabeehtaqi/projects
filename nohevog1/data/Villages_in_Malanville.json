@@ -1,3 +1,9 @@
-{"type":"Feature","properties":{"RECNUM":"4","NAME":"Bodjecali","LAT":"+11.8111728","LON":"+3.3817261","ALTITUDE":"173.2","LONGNAME":"14-JUL-10 6:11:52","Name_1":"Bodjecali Vrai","Communes":"M"},"geometry":{"type":"Point","coordinates":[3.381726106695677,11.811172769652309]}}
-{"type":"Feature","properties":{"RECNUM":"14","NAME":"Garou","LAT":"+11.7967073","LON":"+3.4733457","ALTITUDE":"172.2","LONGNAME":"14-JUL-10 5:25:13","Name_1":"Garou","Communes":"M"},"geometry":{"type":"Point","coordinates":[3.4733456727299803,11.796707281166547]}}
-{"type":"Feature","properties":{"RECNUM":"28","NAME":"Monkassa","LAT":"+11.7866854","LON":"+3.3966254","ALTITUDE":"175.6","LONGNAME":"14-JUL-10 5:56:37","Name_1":"Monkassa","Communes":"M"},"geometry":{"type":"Point","coordinates":[3.3966253586703354,11.786685374825787]}}
+{
+"type": "FeatureCollection",
+                                                                                
+"features": [
+{ "type": "Feature", "properties": { "RECNUM": "4", "NAME": "Bodjecali", "LAT": "+11.8111728", "LON": "+3.3817261", "ALTITUDE": "173.2", "LONGNAME": "14-JUL-10 6:11:52", "Name_1": "Bodjecali Vrai", "Communes": "M" }, "geometry": { "type": "Point", "coordinates": [ 3.381726106695677, 11.811172769652309 ] } },
+{ "type": "Feature", "properties": { "RECNUM": "14", "NAME": "Garou", "LAT": "+11.7967073", "LON": "+3.4733457", "ALTITUDE": "172.2", "LONGNAME": "14-JUL-10 5:25:13", "Name_1": "Garou", "Communes": "M" }, "geometry": { "type": "Point", "coordinates": [ 3.47334567272998, 11.796707281166547 ] } },
+{ "type": "Feature", "properties": { "RECNUM": "28", "NAME": "Monkassa", "LAT": "+11.7866854", "LON": "+3.3966254", "ALTITUDE": "175.6", "LONGNAME": "14-JUL-10 5:56:37", "Name_1": "Monkassa", "Communes": "M" }, "geometry": { "type": "Point", "coordinates": [ 3.396625358670335, 11.786685374825787 ] } }
+]
+}

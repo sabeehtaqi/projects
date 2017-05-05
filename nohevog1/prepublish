@@ -3,16 +3,17 @@
 echo
 
 git clone git@github.com:nohevog1/Final_Project.git
+mkdir data
 for shapefile in Final_Project/*.shp
 do
   base=$(basename $shapefile)
   newfile="$(echo $base | cut -f 1 -d '.').json"
-  shp2json -n $shapefile > data/$newfile
+#  shp2json -n $shapefile > data/$newfile
+   ogr2ogr -f geojson data/$newfile $shapefile
   echo "finished creating $newfile"
 done
-rm -rf Final_Project
+#rm -rf Final_Project
 rm -rf node_modules
 
 echo;
 exit 0
-
