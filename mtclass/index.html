@@ -49,12 +49,20 @@ function ready(error, json, population) {
     projection.fitSize([960, 500], geojson);
 
     // Get all tracts in the county with FIPS = '003'
-    county = json.objects.tracts.geometries
-        .filter(function(d) { return d.properties.COUNTYFP === '003'; });
+    fips = geojson.features.map(function(d) { return d.properties.COUNTYFP; });
+    uniqueFips = d3.set(fips).values();
+    counties = uniqueFips.map(function(fips) {
+      return json.objects.tracts.geometries
+          .filter(function(d) { return d.properties.COUNTYFP === fips; });
+    });
+    counties = counties.map(function(county) {
+      return topojson.merge(json, county);
+    })
 
-    // Plot the boundry of the county with FIPS = "003"
-    svg.append("path")
-        .datum(topojson.merge(json, county))
+    svg.selectAll("path.county")
+        .data(counties)
+      .enter()
+        .append('path')
         .attr('class', 'county')
         .attr('d', path)
         .style('stroke', '#aaa')
