@@ -1,6 +1,6 @@
 ## Population-chloropleth time series
 
-Goal: A Chloropeth map of population estimates for the counties in USA from the year 2010 to 2016. and try to make it interactive by a scroll bar or something similar.
+Goal: A Chloropeth map of population estimates for the counties in USA from the year 2010 to 2016, with an interactive by a scroll bar or something similar.
 
 ### Data
 
