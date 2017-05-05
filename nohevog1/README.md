@@ -36,7 +36,7 @@ For each steps, create a separate gist/block -- link to these in your repo's REA
 
 #### Gist
 Version 1
-url: https://gist.github.com/nohevog1/65e448364a9057a6b01a6be6405efb76
+url: https://gist.github.com/nohevog1/f4ce6e47ed1d2fb3cb96d3b4a43155b2
 
 Version 2
 url: https://gist.github.com/nohevog1/56f18c2095fcd145b384cf01147042f7
