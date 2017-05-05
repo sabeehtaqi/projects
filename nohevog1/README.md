@@ -56,7 +56,7 @@ Modify your Gist #2 slippy map so that it starts zoomed in on Benin.
 
     * Change the initial center (line 87) and zoom level (line 96) to center the slippy map on Benin
 
-#### Documentation
+### Documentation
 
 Add the following content to the README.md in your project repo.
 
