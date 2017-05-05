@@ -8,10 +8,10 @@ will tell the story as to what age cohorts are concentrated in specific Counties
 
 Specific objectives:
 
-1) Draw a circle for Rockville using using the Lat Long
-2) Create a drag function for the circle
-3) Drag the circle on top of the State, and as the circle moves, it will label the Counties that it is moving over like in Class 13 the States were labelled.
-4) Create a stacked bar chart of ACS data (starting with mbostock's stacked bar chart block)
+* Create a population density map with census tract data with the legend http://blockbuilder.org/MTClass/237b48e16999f07a69fa01f880fb02bf
+* On the same map, draw County boundaries in a different color.
+* Create a circle over Rockville that can be dragged on the map
+* Create a hover function so that the counties are colored and the label with the name of the County shows with the arrow motion
 
 ### Data
 
