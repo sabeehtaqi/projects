@@ -12,7 +12,7 @@ Data has been summarized and filtered to match the specification of this present
 
 ### Instructional demo
 
-This demo shows how to read CSV data for the project into a map of counties for the entire US.
+This demo, adapted slighly from the [class 5 demo](https://umbcvis.github.io/classes/class-05), shows how to plot the GeoJSON data from the project repo.
 
 *  https://umbcvis.github.io/projects/cibeh/
 
