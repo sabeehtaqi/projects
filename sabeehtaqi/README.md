@@ -6,7 +6,7 @@ Goal: A Chloropeth map of population estimates for the counties in USA from the 
 
 Project repository: https://github.com/sabeehtaqi/FINAL-PROJECT
 
-### Instuctional demo
+### Instructional demo
 
 This demo shows how to read CSV data for the project into a map of counties for the entire US.
 
