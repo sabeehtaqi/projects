@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>is64377 demo</title>
+<script src="//d3js.org/d3.v4.min.js"></script>
+<script>
+
+var endpoint = "https://raw.githubusercontent.com/is64377/778Classes/master/Project/";
+var filename = "OSHA.csv";
+var url = endpoint + filename;
+
+d3.csv(url, function(error, csv) {
+    if (error) throw error;
+
+    // Log the data to the console
+    console.log(csv);
+
+   // Print the data object in the browser window
+   d3.select('body').append('pre')
+       .html(JSON.stringify(csv, null, 2));
+});
+
+</script>
