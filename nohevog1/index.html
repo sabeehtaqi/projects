@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<title>Test</title>
+<title>nohevog1 demo</title>
 <style>
 
 body {
@@ -100,8 +100,7 @@ function ready(error, us, usgs, json) {
       .style("fill", 'crimson')
 
   // Compute the projected initial center.
-//  var center = projection([-98.5, 39.5]);
-  var center = projection([ 2.3158, 9.3077]);
+  var center = projection([ 0, 0 ]);
 
   // Apply a zoom transform equivalent to projection.{scale,translate,center}.
   svg
@@ -119,7 +118,6 @@ function ready(error, us, usgs, json) {
       .attr("d", path)
       .style('stroke', 'yellow')
       .style('fill', 'white')
-  console.log(d3.selectAll('path.country').node())
 }
 
 function zoomed() {
@@ -138,6 +136,9 @@ function zoomed() {
       .attr("d", path);
 
   quakes
+      .attr("d", path)
+
+  benin 
       .attr("d", path)
 
   var image = raster
