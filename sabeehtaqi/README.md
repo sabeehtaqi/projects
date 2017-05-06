@@ -27,11 +27,11 @@ Data were downloaded in excel format. Several columns were not useful so the dat
 Starting with the instructional demo above [Mick Bostock's Chloropleth map](https://bl.ocks.org/mbostock/4060606):
 
 1. Integrate census data
-    * Will need to adapt the demos to CSV data
+    * You'll need to adapt the demos to CSV data
         * Will need to construct 5-digit FIPS ID from the CSV data
-    * The template block loads population data (CSV) using d3map()
-    * Identify in detail what is going on with d3.map in the example
-    * Create a simple example (start by using something that can be manipulated in console)
-2. Add interaction somehow (TBD)
+2. For ideas on constructing the chloropleth map, look at this example...
+    * https://bl.ocks.org/mbostock/4060606
+    * Note: this examples uses a fancy approach to load the TSV data. The instructional demo already loads your CSV and may be easier to understand.
+3. Add interaction somehow (TBD)
 
 Note: For each step, create a separate gist/block -- link to these in your repo's README.md.
