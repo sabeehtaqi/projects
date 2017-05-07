@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style> /* set the CSS */
+
+body {
+  margin:0;
+  position:fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+}
+
+.bar { 
+  fill: steelblue;
+}
+
+.bar:hover {
+  fill: brown;
+}
+
+.label {
+  fill: black;
+  font: 10px sans-serif;
+  text-anchor: middle;
+}
+</style>
+<body>
+	
+<!-- load the d3.js library -->    	
+<script src="//d3js.org/d3.v4.min.js"></script>
+
+<script>
+// set the dimensions and margins of the graph
+var margin = {top: 20, right: 20, bottom: 80, left: 80}, // 1. Adjust margin to make room for axis labels
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+// set the ranges
+var x = d3.scaleBand()
+          .range([0, width])
+          .padding(0.05);
+
+var y = d3.scaleLinear()
+          .range([height, 0]);
+
+var xAxis = d3.axisBottom(x);
+var yAxis = d3.axisLeft(y)
+        .ticks(10, "%");
+          
+// append the svg object to the body of the page
+// append a 'group' element to 'svg'
+// moves the 'group' element to the top left margin
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", 
+          "translate(" + margin.left + "," + margin.top + ")");
+
+// get the data
+var url = "https://raw.githubusercontent.com/MTClass/Project/master/CountyPop.csv"
+  
+d3.csv(url, function(error, data) {
+  if (error) throw error;
+
+  // format the data
+  data.forEach(function(d) {
+    d.Pop = +d.Pop;
+  });
+
+  // Scale the range of the data in the domains
+  x.domain(data.map(function(d) { return d.County; }));
+  y.domain([0, d3.max(data, function(d) { return d.Pop; })]);
+
+  // append the rectangles for the bar chart
+  svg.selectAll(".bar")
+      .data(data)
+    .enter().append("rect")
+      .attr("class", "bar")
+      .attr("x", function(d) { return x(d.County); })
+      .attr("width", x.bandwidth())
+      .attr("y", function(d) { return y(d.Pop); })
+      .attr("height", function(d) { return height - y(d.Pop); });
+
+  // add the x Axis
+  svg.append("g")
+      .attr("class", "x axis")  // 2. Add a class so we can select X-axis to customize text
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x));
+
+  // 3. Custom text formatting on the X-Axis
+  d3.selectAll(".x.axis .tick text")
+      .attr("text-anchor", "start")
+      .attr("transform", "rotate(15)");
+  
+  // add the y Axis
+  svg.append("g")
+      .call(d3.axisLeft(y));
+});
+</script>
+</body>
