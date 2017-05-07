@@ -16,9 +16,9 @@ https://umbcvis.github.io/projects/is64377
 
 It prints the JavaScript object in the browser window.
 
-2. This demo implements Step #0 described below. That is, it replaces earthquakes with OSHA data (from the CSV) -- it starts from the Class #5 demo
-
-https://umbcvis.github.io/projects/is64377/index2.html
+2. This demo implements Step #0 described below. That is, it replaces earthquakes with OSHA data (from the CSV)
+    * It starts from the Class #5 demo
+    * https://umbcvis.github.io/projects/is64377/index2.html
 
 ## To Do
 
