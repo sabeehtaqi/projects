@@ -8,7 +8,7 @@ Project repository: https://github.com/is64377/778Classes/tree/master/Project
 
 OSHA data: https://github.com/is64377/778Classes/blob/master/Project/OSHA.csv
 
-### Instructional demo
+### Instructional demos
 
 1. This demo shows how to use D3 to read the source OSHA data stored as a CSV file in your repository.
 

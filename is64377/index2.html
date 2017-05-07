@@ -90,7 +90,7 @@ legend.append('text')
 
 var url = "https://umbcvis.github.io/classes/class-03/us.json"
 
-// 1. Data URL pulled from instructional demo #1
+// NEW FOR INSTRUCTIONAL DEMO -- URL pulled from instructional demo #1
 var endpoint = "https://raw.githubusercontent.com/is64377/778Classes/master/Project/";
 var filename = "OSHA.csv";
 var url2 = endpoint + filename;
@@ -113,6 +113,7 @@ function plotQuakes(error, csv) {
   if (error) throw error;
   console.log(csv[0])
 
+  // NEW FOR INSTRUCTIONAL DEMO #2
   layer2.selectAll("circle.quake")
       .data(csv)
     .enter().append("circle")
