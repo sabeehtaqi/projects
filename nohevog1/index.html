@@ -73,13 +73,15 @@ var endpoint = "https://raw.githubusercontent.com/umbcvis/projects/master/nohevo
 //var file = "Africa.json";  // This works (Lat/Lon)
 //var file = "Alibori_Villages_surveys.json" // This works (Lat/Lon)
 
+var file = "Collines_communes.json";
+
 // They have been projected onto  (UTM Transverse Mercator = WGS_1984_UTM_Zone_31N)
 
 // The following file has been fixed
 //var file = "Benin.json";  // This does not work
 
 // The following file no longer exists
-var file = "Parcs_Nationaux.json"; // Ditto
+// var file = "Parcs_Nationaux.json"; // Ditto
 
 // Local testing
 // endpoint = "http://localhost/~pbogden/umbcvis/projects/nohevog1/data/";
@@ -115,7 +117,7 @@ function ready(error, us, usgs, json) {
           .scale(1 << 12)
           .translate(-center[0], -center[1]));
 
-  benin.append('path')
+  benin = benin.append('path')
       .datum(json)
       .attr("class", "country")
       .attr("d", path)
