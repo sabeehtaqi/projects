@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<meta charset='utf-8'>
+<title>US Counties</title>
+<svg width="960" height="600" fill="none" stroke="#000" stroke-linejoin="round" stroke-linecap="round"></svg>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://unpkg.com/topojson-client@3"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script>
+
+var svg = d3.select("svg");
+
+var path = d3.geoPath();
+
+// This color scale works for values ranging from 2 to 10
+var color = d3.scaleThreshold()
+    .domain(d3.range(2, 10).map(function(d) { return d * 100; }))
+    .range(d3.schemeBlues[9]);
+
+var filename = "https://raw.githubusercontent.com/sabeehtaqi/FINAL-PROJECT/master/Project%20Data.csv";
+
+d3.queue()
+    .defer(d3.json,"https://unpkg.com/us-atlas@1/us/10m.json")
+    .defer(d3.csv, filename)
+    .await(ready);
+
+function ready(error, us, csv) {
+  if (error) throw error;
+
+  // Inspect the CSV data in the developer console.
+  console.log('here is one of the csv data rows:', csv[0]);
+
+  // Get the data for one year -- reformat the string value into a number
+  var data = d3.map();
+  csv.forEach(function(d) { data.set(d.id, +d.rate2010.replace(',','')); });
+
+  console.log('here is how the data map works', data.get(27069));
+
+  var counties = topojson.feature(us, us.objects.counties).features;
+
+  // Inspect one of the county features in the developer console.
+  // The "id" attribute is a 5-digit GEOID (state + county).
+  // See: https://www.census.gov/geo/reference/geoidentifiers.html
+  console.log('here is a county:', counties[0]);
+
+  svg.selectAll('path.county')
+      .data( counties )
+    .enter().append("path")
+      .attr("d", path)
+      .attr("stroke", "#aaa")
+      .attr("stroke-width", 0.5)
+      .attr("fill", function(d) { return color(data.get(d.id)); });
+
+  svg.append("path")
+      .attr("stroke", "#aaa")
+      .attr("stroke-width", 0.5)
+      .attr("d", path(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; })));
+
+  svg.append("path")
+      .attr("d", path(topojson.feature(us, us.objects.nation)));
+}
+
+</script>
