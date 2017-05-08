@@ -4,7 +4,7 @@ The purpose of this map is to create a pollution index report for all states wit
 
 ### Data
 
-Project repository: https://github.com/umbcvis/projects/tree/master/cibeh
+Project repository: https://github.com/cibeh/class/tree/master/FinalProject
 
 Data derived from: https://www.epa.gov/outdoor-air-quality-data/download-daily-data
 
