@@ -1,9 +1,0 @@
-{
-"type": "FeatureCollection",
-                                                                                
-"features": [
-{ "type": "Feature", "properties": { "RECNUM": "21", "NAME": "Kokey", "LAT": "+11.3805602", "LON": "+2.5227182", "ALTITUDE": "289.0", "LONGNAME": "15-JUL-10 9:29:59", "Name_1": "Kokey Vrai", "Communes": "B" }, "geometry": { "type": "Point", "coordinates": [ 2.522718243823962, 11.380560205794056 ] } },
-{ "type": "Feature", "properties": { "RECNUM": "23", "NAME": "Kokiborou", "LAT": "+11.1981936", "LON": "+2.3178204", "ALTITUDE": "295.0", "LONGNAME": "15-JUL-10 8:43:37", "Name_1": "Kokiborou Vrai", "Communes": "B" }, "geometry": { "type": "Point", "coordinates": [ 2.317820441609662, 11.198193629845145 ] } },
-{ "type": "Feature", "properties": { "RECNUM": "24", "NAME": "Kommon", "LAT": "+11.2869302", "LON": "+2.4209324", "ALTITUDE": "308.5", "LONGNAME": "15-JUL-10 8:06:08", "Name_1": "Kommon", "Communes": "B" }, "geometry": { "type": "Point", "coordinates": [ 2.420932351257329, 11.286930240285127 ] } }
-]
-}

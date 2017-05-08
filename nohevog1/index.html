@@ -70,13 +70,16 @@ var usgs = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.g
 var endpoint = "https://raw.githubusercontent.com/umbcvis/projects/master/nohevog1/data/";
 
 // The following files work
-var file = "Africa.json";  // This works (Lat/Lon)
+//var file = "Africa.json";  // This works (Lat/Lon)
 //var file = "Alibori_Villages_surveys.json" // This works (Lat/Lon)
 
-// The following files do NOT work
 // They have been projected onto  (UTM Transverse Mercator = WGS_1984_UTM_Zone_31N)
+
+// The following file has been fixed
 //var file = "Benin.json";  // This does not work
-//var file = "Parcs_Nationaux.json"; // Ditto
+
+// The following file no longer exists
+var file = "Parcs_Nationaux.json"; // Ditto
 
 // Local testing
 // endpoint = "http://localhost/~pbogden/umbcvis/projects/nohevog1/data/";

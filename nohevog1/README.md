@@ -20,7 +20,8 @@ It will also display some touristic characteristics of the country and some poin
 
 ### Project repository
 
-https://github.com/nohevog1/Final_Project
+https://github.com/nohevog1/Final_Project -- old data files (pre-projected coordinates)
+https://github.com/nohevog1/Final_Project2 -- updated data files (un-projected coordinates)
 
 ### Gists
 

@@ -1,0 +1,18 @@
+{
+"type": "FeatureCollection",
+                                                                                
+"features": [
+{ "type": "Feature", "properties": { "RECNUM": "1", "NAME": "Adourekoman", "LAT": "+7.9171586", "LON": "+2.2729530", "ALTITUDE": "163.1", "LONGNAME": "17-JUL-10 1:47:41", "Name_1": "Adourekoman" }, "geometry": { "type": "Point", "coordinates": [ 2.272952952146555, 7.917158571524415 ] } },
+{ "type": "Feature", "properties": { "RECNUM": "9", "NAME": "Erokowari", "LAT": "+7.8408884", "LON": "+2.1337682", "ALTITUDE": "188.8", "LONGNAME": "17-JUL-10 3:14:14", "Name_1": "Erokowari" }, "geometry": { "type": "Point", "coordinates": [ 2.133768181114817, 7.840888365664842 ] } },
+{ "type": "Feature", "properties": { "RECNUM": "10", "NAME": "Gankpétin", "LAT": "+7.7094227", "LON": "+2.2090456", "ALTITUDE": "191.4", "LONGNAME": "17-JUL-10 4:07:35", "Name_1": "Gankpétin" }, "geometry": { "type": "Point", "coordinates": [ 2.209045550544248, 7.709422740716771 ] } },
+{ "type": "Feature", "properties": { "RECNUM": "17", "NAME": "Gomé", "LAT": "+7.8705608", "LON": "+2.2060757", "ALTITUDE": "209.2", "LONGNAME": "17-JUL-10 1:28:31", "Name_1": "Gomé" }, "geometry": { "type": "Point", "coordinates": [ 2.206075674614085, 7.870560805790526 ] } },
+{ "type": "Feature", "properties": { "RECNUM": "25", "NAME": "Lema", "LAT": "+7.8368490", "LON": "+2.2255406", "ALTITUDE": "206.1", "LONGNAME": "11-JUL-10 8:15:54", "Name_1": "Lema" }, "geometry": { "type": "Point", "coordinates": [ 2.225540633062887, 7.83684904270959 ] } },
+{ "type": "Feature", "properties": { "RECNUM": "27", "NAME": "Mindédjro", "LAT": "+7.8219647", "LON": "+2.1122758", "ALTITUDE": "189.7", "LONGNAME": "17-JUL-10 3:39:39", "Name_1": "Mindédjro" }, "geometry": { "type": "Point", "coordinates": [ 2.112275807927959, 7.821964710522569 ] } },
+{ "type": "Feature", "properties": { "RECNUM": "30", "NAME": "Ouèdèmè", "LAT": "+8.0129261", "LON": "+2.1790233", "ALTITUDE": "198.4", "LONGNAME": "11-JUL-10 9:27:10", "Name_1": "Ouèdèmè" }, "geometry": { "type": "Point", "coordinates": [ 2.179023333599402, 8.012926089979015 ] } },
+{ "type": "Feature", "properties": { "RECNUM": "33", "NAME": "Soklogbo", "LAT": "+7.7749437", "LON": "+2.2911931", "ALTITUDE": "183.5", "LONGNAME": "17-JUL-10 4:46:55", "Name_1": "Soklogbo" }, "geometry": { "type": "Point", "coordinates": [ 2.291193146904582, 7.774943658678742 ] } },
+{ "type": "Feature", "properties": { "RECNUM": "34", "NAME": "Sokponta", "LAT": "+7.8680543", "LON": "+2.2183203", "ALTITUDE": "210.2", "LONGNAME": "17-JUL-10 1:18:32", "Name_1": "Sokponta" }, "geometry": { "type": "Point", "coordinates": [ 2.218320294036694, 7.868054281467439 ] } },
+{ "type": "Feature", "properties": { "RECNUM": "35", "NAME": "Sowé", "LAT": "+7.9798804", "LON": "+2.1669386", "ALTITUDE": "182.5", "LONGNAME": "17-JUL-10 2:37:51", "Name_1": "Sowé" }, "geometry": { "type": "Point", "coordinates": [ 2.166938557070189, 7.979880436742768 ] } },
+{ "type": "Feature", "properties": { "RECNUM": "39", "NAME": "Tré", "LAT": "+7.7424637", "LON": "+2.1993486", "ALTITUDE": "210.2", "LONGNAME": "17-JUL-10 4:19:04", "Name_1": "Tré" }, "geometry": { "type": "Point", "coordinates": [ 2.199348610589274, 7.742463700087243 ] } },
+{ "type": "Feature", "properties": { "RECNUM": "40", "NAME": "Yawa", "LAT": "+7.9458221", "LON": "+2.2096836", "ALTITUDE": "180.9", "LONGNAME": "16-JUL-10 7:43:20", "Name_1": "Yawa" }, "geometry": { "type": "Point", "coordinates": [ 2.209683581013326, 7.945822081965875 ] } }
+]
+}
