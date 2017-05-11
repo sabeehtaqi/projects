@@ -1,6 +1,8 @@
 ## Project title
 
 Chloropeth Map of Population estimate for Counties in USA
+
+
 Project Submission : https://gist.github.com/sabeehtaqi/fe4f3f2f8cf2c7ee82f5dca555aae1d3
 ### Data
 
@@ -16,7 +18,7 @@ Add the following content to the README.md in your repo.
 
 1. 1 or 2 sentences describing overall project goals, e.g., interactive tool?, hypothesis test? (0% complete)
 
-My Project Goal is to make a Chloropeth map of Population estimates for the counties in USA from the year 2010 to 2016 and try to make it interactive by a scroll bar or something similar.
+My Project Goal is to make a Chloropeth map of Population estimates for the counties in USA for the year 2016.
 
 2. Attribution and links to all data sources (0% complete)
  
