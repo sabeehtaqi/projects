@@ -2,6 +2,7 @@
 <meta charset='utf-8'>
 <title>US Counties</title>
 <svg width="960" height="600" fill="none" stroke="#000" stroke-linejoin="round" stroke-linecap="round"></svg>
+<div class="info" style="position: absolute; top: 20px; left: 20px"></div> <!-- NEW -->
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://unpkg.com/topojson-client@3"></script>
 <script>
@@ -47,7 +48,10 @@ function ready(error, us, csv) {
       .attr('fill-opacity', '0')
       .attr("stroke", "#aaa")
       .attr("stroke-width", 0.5)
-      .on('mouseover', function(d) { console.log(d.id, data.get(d.id)); }); // NEW
+      .on('mouseover', function(d) { 
+          console.log(d.id, data.get(d.id)); 
+          d3.select(".info").html(data.get(d.id)["County Name"]); 
+      }); // NEW
 
   svg.append("path")
       .attr("stroke-width", 0.5)
