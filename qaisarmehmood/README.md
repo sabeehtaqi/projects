@@ -19,7 +19,7 @@ The goal is to identify the counties by a color scheme and showing the percentag
 
     *  https://umbcvis.github.io/projects/qaisarmehmood/index2
 
-3. The third demo shows how to create a D3 map so that the CSV data can be queried by FIPS code.  The several lines of new code are indicated by "NEW" comments. 
+3. The third demo shows how to create a D3 map so that the CSV data can be queried by FIPS code.  The several lines of new code are indicated by "NEW" comments.  To see what's going on, you should open the developer console and scroll over some of the counties.
 
     *  https://umbcvis.github.io/projects/qaisarmehmood/index3
 
