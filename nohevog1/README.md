@@ -33,7 +33,7 @@ https://github.com/nohevog1/Final_Project2 -- updated data files (un-projected c
 
     * This is a modified version of the slippy map [demo from Class 10](https://umbcvis.github.io/classes/class-10/).
 
-### Instructional demo
+### Instructional demos
 
 1. This demo shows how to plot one of the GeoJSON files on a slippy map
 

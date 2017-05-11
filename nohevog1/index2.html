@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Nohemi's GES 778 Final Project</title>
+<style>
+body {
+  margin: 0;
+}
+path {
+  fill: none;
+  stroke: red;
+  stroke-linejoin: round;
+  stroke-width: 1.5px;
+}
+.info {
+  color: #000;
+  position: absolute;
+  background-color: rgba(200, 200, 200, .7);
+  visibility: hidden;
+  padding: 0.5em;
+  bottom: 100px;
+  right: 100px;
+}
+.communes :hover {
+  fill: red;
+}
+  
+.action-button {
+  border-radius: 2px;
+  border: 1px solid #19380D;
+  padding: 3px 12px;
+  background-color: rgba(175, 209, 183, 0.6);
+  text-decoration: none;
+  display: inline-block;
+}
+.action-button:active {
+  box-shadow: inset 0 0 3px 0px #0077b3;
+}
+.action-button.destroy {
+  border: 1px solid #863636;
+  background-color: rgba(197, 86, 86, 0.6);
+}
+</style>
+<svg>
+
+
+</svg>
+<div class='info'></div>
+<div id="AddAndDelete" style="text-align: center;">
+  <p class="value">Click buttons to Add or Remove layers</p>
+  <a href="javascript:void(0)" class="add-research-areas action-button">Add Research Areas</a>
+  <a href="javascript:void(0)" class="remove-data action-button destroy">Remove
+   Research Areas</a>
+  <a href="javascript:void(0)" class="add-data action-button">Add Parks</a>
+  <a href="javascript:void(0)" class="remove-data action-button destroy">Remove
+   Parks</a>
+  <a href="javascript:void(0)" class="add-data action-button">Add Cynegetic Zones</a>
+  <a href="javascript:void(0)" class="remove-data action-button destroy">Remove Cynegetic Zones</a>
+</div>
+
+<script src="//d3js.org/d3.v4.min.js"></script>
+<script src="//d3js.org/d3-tile.v0.0.min.js"></script>
+<script src="//d3js.org/topojson.v1.min.js"></script>
+<script>
+var pi = Math.PI,
+    tau = 2 * pi;
+var width = Math.max(850, window.innerWidth),
+    height = Math.max(400, window.innerHeight);
+  	//opacity= "0.5"
+  
+  
+// Initialize the projection to fit the world in a 1×1 square centered at the origin.
+var projection = d3.geoMercator()
+    .scale(1 / tau)
+    .translate([0, 0]);
+ 
+var path = d3.geoPath()
+    .projection(projection);
+var tile = d3.tile()
+    .size([width, height]);
+var zoom = d3.zoom()
+    .scaleExtent([1 << 11, 1 << 14])
+    .on("zoom", zoomed);
+var svg = d3.select("svg")
+    .attr("width", width)
+    .attr("height", height)
+
+var raster = svg.append("g");
+var vector = svg.append("path");
+var quakes = svg.append("g");
+  
+var africa = svg.append("g");
+  
+var west_africa = svg.append("g");
+  
+var departments = svg.append("g");
+  
+var alibori = svg.append("g");
+  
+var collines = svg.append("g");
+  
+var parks = svg.append("g");
+  
+var cynegetic_zones =svg.append("g");
+   
+var villages = svg.append("g");
+  
+var research_communes =svg.append("g");
+        
+// MODIFIED: Title has been put here so that it is on top of other layers
+var titleText = 'Points of Interests in BENIN (West Africa)';
+var title = svg.append('text')
+    .attr('x', width / 2)
+    .attr('y', "1.5em")
+    .style('font-family', 'Paerpetua Titling MT')
+    .style('font-size', '28px')
+    .style("font-weight", "bold") 
+    .style('text-anchor', 'middle')
+    .style('fill', 'Magenta')
+    .text(titleText);
+  
+var us = "https://umbcvis.github.io/classes/class-03/us.json";
+var usgs = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson";
+var endpoint = "https://raw.githubusercontent.com/umbcvis/projects/master/nohevog1/data/";
+  
+var endpoint2 = "https://raw.githubusercontent.com/nohevog1/Classes/master/"
+  
+// The following files work
+//var file = "Africa.json";  // This works (Lat/Lon)
+//var file = "Alibori_Villages_surveys.json" // This works (Lat/Lon)
+  
+var alibori_file = "Alibori_communes_surveys.json";
+  
+var collines_file = "Collines_communes_surveys.json";
+  
+var africa_file ="Africa_with_islands.json";
+  
+var departments_file = "Departments.json"
+  
+var research_communes_file = "Communes.json"
+var parks_file ="National_Parks.json"
+var cynegetic_zones_file ="Cynegetic_Zones.json"
+var west_africa_file = "West_Africa.json"
+var villages_file = "Villages.json"
+// They have been projected onto  (UTM Transverse Mercator = WGS_1984_UTM_Zone_31N)
+// The following file has been fixed
+//var file = "Benin.json";  // This does not work
+// The following file no longer exists
+// var file = "Parcs_Nationaux.json"; // Ditto
+// Local testing
+// endpoint = "http://localhost/~pbogden/umbcvis/projects/nohevog1/data/";
+d3.queue()
+    .defer(d3.json, us)
+    .defer(d3.json, usgs)
+		.defer(d3.json, endpoint + africa_file)//json1
+		.defer(d3.json, endpoint2 + west_africa_file)//json2
+		.defer(d3.json, endpoint2 + departments_file)//json3
+		.defer(d3.json, endpoint2 + parks_file)//json4
+		.defer(d3.json, endpoint2 + cynegetic_zones_file)//json5
+		.defer(d3.json, endpoint + research_communes_file)//json6
+		.defer(d3.json, endpoint + alibori_file)//json7
+		.defer(d3.json, endpoint + collines_file)//json8
+		.defer(d3.json, endpoint2 + villages_file)//json9
+		.await(ready);
+  
+  function ready(error, us, usgs, json1, json2, json3, json4, json5, json6, json7, json8, json9) {
+    
+  if (error) throw error;
+  
+  vector
+      .datum(topojson.mesh(us, us.objects.us));
+  quakes = quakes.selectAll(".quake")
+      .data(usgs.features)
+    	.enter().append("path")
+      .attr("class", "quake")
+      .style("fill", 'crimson');
+  
+   africa = africa.append('path')
+   		.datum(json1)
+      .attr("class", "country")
+      .attr("d", path)
+      .style('stroke', 'red')
+      ;
+  
+  west_africa = west_africa.append('path')
+   		.datum(json2)
+      .attr("class", "country")
+      .attr("d", path)
+      .style('stroke', 'blue')
+      ;
+  
+  departments = departments.append('path')
+   		.datum(json3)
+      .attr("class", "DEPARTM")
+      .attr("d", path)
+      .style('stroke', '#ffff00');
+  
+  parks = parks.append('path')
+      .datum(json4)
+      .attr("class", "nom")
+      .attr("d", path)
+      .style('stroke', '#cc00cc')
+  		.style('fill', 'green')
+  
+ cynegetic_zones = cynegetic_zones.append('path')
+   		.datum(json5)
+      .attr("class", "NAME1")
+      .attr("d", path)
+      .style('stroke', 'black')
+ 			.style('fill', 'orange')
+  		;  	
+    
+  alibori = alibori.append('path')
+      .datum(json7)
+      .attr("class", "nom")
+      .attr("d", path)
+      .style('stroke', '#cc00cc')
+  		.style('fill', '#9393b7')
+      ;
+  
+  collines = collines.append('path')
+      .datum(json8)
+      .attr("class", "nom")
+      .attr("d", path)
+      .style('stroke', '#d600d6')
+  		.style('fill', '#feaa56')
+  	
+      ;
+  research_communes = research_communes.selectAll("communes")
+   //	.data(topojson.feature(json2, json2.objects).features)
+  	.datum(json6)
+    .attr("class", "NAME")
+    .attr("d", path)
+   	//.style('symbol', 'diamond')
+    .style('stroke', 'black')
+    .style('fill', 'magenta')
+  
+    // THIS HAS BEEN FIXED -- Villages now appear on map, and you can mouseover each one to change title
+    villages = villages.selectAll(".research_villages")
+        .data(json9.features)  // Plotting each feature separately so we can mouseover each one
+      .enter().append("path")
+        .attr("class", ".research_villages")
+        .attr("d", path)
+        .style('stroke', 'green')
+        .style('fill', 'red')
+        .on("mouseover", function(d) { title.html( d.properties.NAME ) })
+        .on("mouseout", function(d) { title.html( titleText ) });
+  
+  // Compute the projected initial center.
+  var center = projection([2, 10]);
+  // Apply a zoom transform equivalent to projection.{scale,translate,center}.
+  svg
+      .on('mousemove', mousemoved)
+      .on('mouseout', function() { d3.select('.info').style('visibility', 'hidden') })
+      .call(zoom)
+      .call(zoom.transform, d3.zoomIdentity
+          .translate(width / 2, height / 2)
+          .scale(1 << 15)
+          .translate(-center[0], -center[1]));
+ 	    
+}
+function zoomed() {
+  var transform = d3.event.transform;
+  var tiles = tile
+      .scale(transform.k)
+      .translate([transform.x, transform.y])
+      ();
+  projection
+      .scale(transform.k / tau)
+      .translate([transform.x, transform.y]);
+  	
+  vector
+      .attr("d", path);
+  quakes
+      .attr("d", path)
+  
+   africa
+  		.attr("d", path)
+   west_africa
+   	.attr("d", path)
+    departments
+    .attr("d", path)
+    parks
+      .attr("d", path)
+    cynegetic_zones
+    	.attr("d", path)
+    research_communes
+    	.attr("d", path)
+    alibori
+    .attr("d", path)
+    collines 
+      .attr("d", path)
+    villages
+    .attr("d", path)
+  
+d3.selectAll("#AddAndDelete .add-research-areas")
+   .on("click", function() {
+    alert("You clicked the add-research-areas button");
+ })
+    
+  var image = raster
+      .attr("transform", stringify(tiles.scale, tiles.translate))
+    .selectAll("image")
+    .data(tiles, function(d) { return d; });
+  image.exit().remove();
+  image.enter().append("image")
+      .attr("xlink:href", function(d) { return "http://" + "abc"[d[1] % 3] + ".tile.openstreetmap.org/" + d[2] + "/" + d[0] + "/" + d[1] + ".png"; })
+      .attr("x", function(d) { return d[0] * 256; })
+      .attr("y", function(d) { return d[1] * 256; })
+      .attr("width", 256)
+      .attr("height", 256);
+}
+function stringify(scale, translate) {
+  var k = scale / 256, r = scale % 1 ? Number : Math.round;
+  return "translate(" + r(translate[0] * scale) + "," + r(translate[1] * scale) + ") scale(" + k + ")";
+}
+function mousemoved() {
+  d3.select('.info')
+      .style('visibility', 'visible')
+      .text(formatLocation(projection.invert(d3.mouse(this)), projection.scale()));
+}
+function formatLocation(p, k) {
+  var format = d3.format("." + Math.floor(Math.log(k) / 2 - 2) + "f");
+  return (p[1] < 0 ? format(-p[1]) + "°S" : format(p[1]) + "°N") + " "
+       + (p[0] < 0 ? format(-p[0]) + "°W" : format(p[0]) + "°E");
+}
+</script>
