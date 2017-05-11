@@ -37,11 +37,11 @@ https://github.com/nohevog1/Final_Project2 -- updated data files (un-projected c
 
 1. This demo shows how to plot one of the GeoJSON files on a slippy map
 
-https://umbcvis.github.io/projects/nohevog1
+    * https://umbcvis.github.io/projects/nohevog1
 
 2. This demo make small changes to a gist that's in development.  The two sections of code that were changed have comments. The primary change: villages now appear on the map, and you can mouseover those villages to change the title. Nothing else was done.
 
-https://umbcvis.github.io/projects/nohevog1/index2.html
+    * https://umbcvis.github.io/projects/nohevog1/index2.html
 
 ## To Do
 
