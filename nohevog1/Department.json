@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+                                                                                
+"features": [
+{ "type": "Feature", "properties": { "DEPARTM": "ALIBORI" }, "geometry": null },
+{ "type": "Feature", "properties": { "DEPARTM": "ATACORA" }, "geometry": null },
+{ "type": "Feature", "properties": { "DEPARTM": "ATLANTIQUE" }, "geometry": null },
+{ "type": "Feature", "properties": { "DEPARTM": "BORGOU" }, "geometry": null }
+]
+}
