@@ -34,7 +34,7 @@ Add the following content to the README.md in your repo.
 
 #### Technical
 
-For each steps, create a separate gist/block -- link to these in your repo's README.md
+For each step, create a separate gist/block -- link to these in your repo's README.md
 
 1. Create plot of NY Counties based on us-atlas (if starting from one of Mike Bostock's blocks, provide a link)
 2. Integrate data from census.gov to create chloropleth map using FIPS
