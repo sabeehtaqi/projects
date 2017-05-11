@@ -11,13 +11,17 @@ The goal is to identify the counties by a color scheme and showing the percentag
 
 ### Instructional demos
 
-This demo shows how to read CSV data for the project into a map of counties for the entire US.
+1. This demo shows how to read CSV data for the project into a map of counties for the entire US.
 
-*  https://umbcvis.github.io/projects/qaisarmehmood
+    *  https://umbcvis.github.io/projects/qaisarmehmood
 
-The second demo shows how to filter all the counties except those in New York.  And it uses the [SVG transform attribute](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform) to zoom in on the state.
+2. The second demo shows how to filter all the counties except those in New York.  And it uses the [SVG transform attribute](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform) to zoom in on the state.
 
-*  https://umbcvis.github.io/projects/qaisarmehmood/index2
+    *  https://umbcvis.github.io/projects/qaisarmehmood/index2
+
+3. The third demo shows how to create a D3 map so that the CSV data can be queried by FIPS code.  The several lines of new code are indicated by "NEW" comments. 
+
+    *  https://umbcvis.github.io/projects/qaisarmehmood/index3
 
 ## To Do
 
