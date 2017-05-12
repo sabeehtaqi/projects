@@ -1,10 +1,13 @@
 ## Population-chloropleth time series
 
-Goal: A Chloropeth map of population estimates for the counties in USA from the year 2010 to 2016, with an interactive by a scroll bar or something similar.
+Goal: A Chloropeth map of population estimates for the counties in USA for the year 2016.
 
 ### Data
 
 Project repository: https://github.com/sabeehtaqi/FINAL-PROJECT
+
+
+Data Source:  https://www2.census.gov/programs-surveys/popest/datasets/
 
 ### Instructional demos
 
